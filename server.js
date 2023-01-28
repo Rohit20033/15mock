@@ -1,9 +1,7 @@
 
-require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 const connect = require("./config/db")
-const port = process.env.PORT
 const userRoute = require("./routes/user/user.route")
 const calRoute = require("./routes/calculate/calculate.route")
 const app = express()
@@ -16,7 +14,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.listen(port,async()=>{
+app.listen(8000,async()=>{
     await connect()
-    console.log(`http://localhost:${port}/`)
+    console.log(`http://localhost:8000/`)
 })
